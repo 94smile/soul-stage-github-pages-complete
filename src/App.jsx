@@ -257,7 +257,7 @@ export default function SoulStageApp() {
             {countSoulZeros(input) && <p className="mt-2">靈魂年齡：{countSoulZeros(input)}</p>}
             {results[2] && results[2] !== "--/--" && (
   <p className="text-purple-800 font-semibold">
-    <strong>主命數(+)： {results[2].match(new RegExp("\\d+$"))?.[0]} 號人</strong>
+    <strong>主命數+ {results[2].match(new RegExp("\\d+$"))?.[0]} 號人</strong>
   </p>
 )}
 <p dangerouslySetInnerHTML={{ __html: getCoreDigitIdentity(input) }} />
@@ -270,7 +270,7 @@ export default function SoulStageApp() {
             {countSoulZeros(lunarInput) && <p className="mt-2 text-white">靈魂年齡：{countSoulZeros(lunarInput)}</p>}
             {lunarResults[2] && lunarResults[2] !== "--/--" && (
   <p className="text-yellow-200 font-semibold">
-    <strong>主命數(-)： {lunarResults[2].match(new RegExp("\\d+$"))?.[0]} 號人</strong>
+    <strong>主命數- {lunarResults[2].match(new RegExp("\\d+$"))?.[0]} 號人</strong>
   </p>
 )}
 <p className="text-white" dangerouslySetInnerHTML={{ __html: getCoreDigitIdentity(lunarInput) }} />
