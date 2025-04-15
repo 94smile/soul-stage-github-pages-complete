@@ -255,7 +255,12 @@ export default function SoulStageApp() {
           <div className="space-y-2 text-sm">
             {renderStages(results)}
             {countSoulZeros(input) && <p className="mt-2">靈魂年齡：{countSoulZeros(input)}</p>}
-            <p dangerouslySetInnerHTML={{ __html: getCoreDigitIdentity(input) }} />
+            {results[2] && results[2] !== "--/--" && (
+  <p className="text-purple-800 font-semibold">
+    <strong>我是 {results[2].match(new RegExp("\\d+$"))?.[0]} 號人</strong>
+  </p>
+)}
+<p dangerouslySetInnerHTML={{ __html: getCoreDigitIdentity(input) }} />
           </div>
         </div>
         <div className="bg-gray-800 p-4 rounded-xl shadow space-y-4">
@@ -263,7 +268,12 @@ export default function SoulStageApp() {
           <div className="space-y-2 text-sm">
             {renderStages(lunarResults, true)}
             {countSoulZeros(lunarInput) && <p className="mt-2 text-white">靈魂年齡：{countSoulZeros(lunarInput)}</p>}
-            <p className="text-white" dangerouslySetInnerHTML={{ __html: getCoreDigitIdentity(lunarInput) }} />
+            {lunarResults[2] && lunarResults[2] !== "--/--" && (
+  <p className="text-yellow-200 font-semibold">
+    <strong>我是 {lunarResults[2].match(new RegExp("\\d+$"))?.[0]} 號人</strong>
+  </p>
+)}
+<p className="text-white" dangerouslySetInnerHTML={{ __html: getCoreDigitIdentity(lunarInput) }} />
           </div>
         </div>
       </div>
